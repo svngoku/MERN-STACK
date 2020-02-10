@@ -1,6 +1,6 @@
-const mongoose, { Schema } = require("mongoose");
+const mongoose = require("mongoose");
 
-userSchema = new Schema({
+const userSchema = new mongoose.Schema({
     ID: Number,
     firstname: String,
     lastname: String,
@@ -8,6 +8,6 @@ userSchema = new Schema({
     password: Number
 });
 
-mongoose.model("user", userSchema);
+mongoose.model("users", userSchema);
 
 
