@@ -5,12 +5,13 @@ const bp = require('body-parser');
 const app = express(); 
 const PORT = process.env.PORT || 4000;
 const route = require('./routes/routes');
+const url = `mongodb://localhost:27017/mern-stack`;
 // MODELS
 require("./models/user.model");
 
 // Mongoose config
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost:27017/mern-stack`);
+mongoose.connect(process.env.MONGODB_URI || url);
 
 // using the router to the app
 app.use(route);
@@ -27,6 +28,7 @@ if(process.env.NODE_ENV === "production") {
   });
 }
 
+// default and basic routes
 route.get('/', (req,res) => {
   return res.send("Home page");
 });
