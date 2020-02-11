@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 const UserCreate = props => {
     const initialFormState = { 
         ID: null, 
         name: '', 
-        username: '' 
+        username: '',
+
     };
     
     const [user, setUser] = useState(initialFormState);
@@ -27,10 +28,16 @@ const UserCreate = props => {
       <label>Name</label>
       <input type="text" name="name" value={user.name} onChange={handleInputChange} placeholder="Enter name" />
 
+      <label>Last name</label>
+      <input type="text" name="lastname" value={user.lastname} onChange={handleInputChange} placeholder="Enter lastname" />
+
       <label>Username</label>
       <input type="text" name="username" value={user.username} onChange={handleInputChange} placeholder="Enter username" />
-      
-      <button className="round-button" onClick={() => alert("Added")} >Add new user</button>
+
+      <label>Password</label>
+      <input type="password" name="password" onChange={handleInputChange} placeholder="Enter password" />
+
+      <button className="round-button" >Add new user</button>
     </form>
   )
 }

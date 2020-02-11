@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from "./layouts/navbarComponent";
 import UserTable from "./tables/UserTable";
 import UserCreate from "./forms/userCreate";
 import ArticleEditor from "./layouts/editorComponent";
+
 function App() {
 
   const userData = [
@@ -17,13 +18,14 @@ function App() {
     },
   ];
   
-  const [users, setUser] = useState(userData);
-
+  /*
   const addUser = (user) => {
     user.ID = users.length + 1;
     setUser([...users, user]);
   }
 
+  addUser={addUser}
+*/
   return (
   <div>
     <Navbar />
@@ -32,11 +34,11 @@ function App() {
       <div className="flex-row">
         <div className="flex-large">
           <h2>Add user</h2>
-          <UserCreate addUser={addUser} />
+          <UserCreate  />
         </div>
         <div className="flex-large">
           <h2>View users</h2>
-          <UserTable users={users} />
+          <UserTable />
         </div>
       </div>
       <div className="flex-large">

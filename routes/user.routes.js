@@ -1,6 +1,5 @@
 const moongose = require("mongoose");
-const User = moongose.model('users');
-
+const User = moongose.model('user');
 
 module.exports = (app) => {
     // GET USER 
