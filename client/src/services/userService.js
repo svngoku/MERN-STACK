@@ -1,5 +1,5 @@
 import axios from "axios";
-const url = `http://localhost:4000/api/user`;
+const url = `http://localhost:4000/api/users`;
 
 export default {
     getAll: async () => {
@@ -15,7 +15,4 @@ export default {
                 console.error(err);
         })
     },
-    // edit: async (user) => {
-        
-    // }
 };
