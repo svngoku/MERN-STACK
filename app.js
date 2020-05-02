@@ -42,5 +42,5 @@ route.get('/', (req,res) => {
 
 app.listen(PORT, function(err){
   if(err) return console.error(err);
-  return console.log(`server running on port ${PORT}`);
+  console.log(`server running on port ${PORT}`);
 });
