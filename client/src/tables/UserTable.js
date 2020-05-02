@@ -1,29 +1,13 @@
-import React, { useState, useEffect } from "react";
-import Modal from "../layouts/modalComponent";
-import userService from "../services/userService";
+import React from "react";
 
-const UserTable = () => {
-    const [users, setUser] = useState(null);
-
-    useEffect(() => {
-        if(!users) {
-            getUsers();
-        } 
-    });
-
-    const getUsers = async () => {
-        let res = await userService.getAll();
-        console.log(res);
-        setUser(res);
-    };
-
+const UserTable = (props) => {
     const renderUserField = (user) => (
         <tr key={ user._id }> <td>{user.ID}</td>
             <td>{user.firstname}</td>
             <td>{user.lastname}</td>
             <td>{user.login}</td>
             <td>
-                <button className="button muted-button" data-toggle="modal" data-target="#exampleModal">Edit</button>
+                <button className="button muted-button" onClick={() => {props.editRow(user)}} className="button muted-button">Edit</button>
                 <button className="button muted-button">Delete</button>
             </td>
         </tr>
@@ -31,7 +15,6 @@ const UserTable = () => {
     
     return (
         <div>
-            <Modal />
             <table>
                 <thead>
                     <tr>
@@ -44,11 +27,11 @@ const UserTable = () => {
                 </thead>
                 <tbody>
                     {
-                        ( users && users.length > 0 ) ? (
-                            users.map(user => renderUserField(user))
+                        ( props.users && props.users.length > 0 ) ? (
+                            props.users.map(user => renderUserField(user))
                         ) : (
                         <tr>
-                            <td colSpan={5}>No users found 😵</td>
+                            <span role="img" aria-label="failed men" colSpan={5}>No users found 😵</span>
                         </tr>
                         )
                     }

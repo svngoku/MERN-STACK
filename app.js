@@ -8,7 +8,7 @@ const route = require('./routes/routes');
 const url = `mongodb://localhost:27017/mern-stack`;
 // MODELS
 require("./models/user.model");
- 
+require("./models/partenaire.model");
 // Mongoose config
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI || url);

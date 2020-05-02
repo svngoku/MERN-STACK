@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const UserCreate = props => {
+const PartenaireCreate = props => {
 
     const initialFormState = {
         ID: null,
@@ -8,12 +8,11 @@ const UserCreate = props => {
         lastname: "",
         login: ""
     }
-    const [user, setUser] = useState(initialFormState);
-    const [submitted, setSubmitted] = useState(false);
+    const [partenaire, setPartenaire] = useState(initialFormState);
 
     const handleInputChange = event => {
         const { name, value } = event.target
-        setUser({ ...user, [name]: value })
+        setPartenaire({ ...partenaire, [name]: value })
     }
 
   return (

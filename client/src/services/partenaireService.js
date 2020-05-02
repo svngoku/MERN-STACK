@@ -1,5 +1,5 @@
 import axios from "axios";
-const url = `http://localhost:4000/api/user`;
+const url = `http://localhost:4000/api/partenaire`;
 
 export default {
     getAll: async () => {

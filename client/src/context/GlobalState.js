@@ -8,7 +8,7 @@ const getUsers = async () => {
 };
 
 const initalState = {
-    listUser : [
+    listUser: [
         {
             "_id": "5e4182bcaad892d38e116be3",
             "ID": 1,
@@ -31,4 +31,4 @@ export const GlobalProvider = ({ children }) => {
             { children }
         </GlobalContext.Provider>
     );
-} 
+}

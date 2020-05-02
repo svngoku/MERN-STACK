@@ -6,9 +6,18 @@ In this we gonna build a simple API with react on the client (front-end)
 
 The back-end is build with express & nodejs
 
-
 ## Setup
 
 ```sh
-    npm init
+    git clone https://github.com/svngoku/MERN-STACK.git
+```
+
+```sh
+    $ yarn 
+
+```
+
+```sh
+    $ yarn start & yarn 
+    
 ```
